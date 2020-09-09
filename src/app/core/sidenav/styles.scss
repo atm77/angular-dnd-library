@@ -1,16 +1,25 @@
-.container {
-  width: 300px;
-  height: 100vh;
-}
-
-.sidenav {
-  width: 300px;
-}
-
 .full-width {
   width: 100%;
 }
 
 .item-description {
   color: #777;
+}
+
+.container {
+  height: 100vh;
+}
+
+.sidebar {
+  width: 300px;
+}
+
+.menu-item {
+  &:hover {
+    .item-description {
+
+        color: purple;
+
+    }
+  }
 }

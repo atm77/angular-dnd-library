@@ -1,12 +1,22 @@
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { MenuService } from '../services/menu.service';
 
 @Component({
     selector: 'side-nav',
     templateUrl: './sidenav.component.html',
     styleUrls: ['./styles.scss'],
 })
-export class SideNavComponent {
+export class SideNavComponent implements OnInit {
+
+  constructor(private menuService: MenuService) {
+
+  }
+
+  ngOnInit(): void {
+    this.menuService.currentSideBarOpenedStatus.subscribe( isOpened => this.opened = isOpened )
+  }
 
   centered = false;
   disabled = false;
@@ -14,12 +24,13 @@ export class SideNavComponent {
 
   radius: number;
   color: string;
+  opened: boolean;
 
 }
 
 @Component({
   selector: 'nav-list-item',
-  template: `<mat-list-item>
+  template: `<mat-list-item class="menu-item">
               <span class="item-description">
                 <a href="#">{{ desc }}</a>
               </span>
