@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'main-menu-title',
+  selector: 'shared-main-menu-title',
   templateUrl: 'MainMenuTitle.component.html',
-  styleUrls: ['MainMenuTitle.styles.scss']
+  styleUrls: ['MainMenuTitle.component.scss']
 })
 
 export class MainMenuTitleComponent implements OnInit {
